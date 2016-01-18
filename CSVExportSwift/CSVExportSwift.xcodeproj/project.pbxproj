@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66AECCB11C4BB4410010B2A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AECCB01C4BB4410010B2A3 /* AppDelegate.swift */; };
+		66AECCB31C4BB4410010B2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AECCB21C4BB4410010B2A3 /* Assets.xcassets */; };
+		66AECCB61C4BB4410010B2A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AECCB41C4BB4410010B2A3 /* MainMenu.xib */; };
+		66AECCC11C4BB4410010B2A3 /* CSVExportSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AECCC01C4BB4410010B2A3 /* CSVExportSwiftTests.swift */; };
+		66AECCCD1C4BB4770010B2A3 /* CSVExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AECCCC1C4BB4770010B2A3 /* CSVExport.swift */; };
+		66AECCCF1C4BB5E40010B2A3 /* CSVExportOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AECCCE1C4BB5E40010B2A3 /* CSVExportOperation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66AECCBD1C4BB4410010B2A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AECCA51C4BB4410010B2A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66AECCAC1C4BB4410010B2A3;
+			remoteInfo = CSVExportSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		66AECCAD1C4BB4410010B2A3 /* CSVExportSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVExportSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66AECCB01C4BB4410010B2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66AECCB21C4BB4410010B2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66AECCB51C4BB4410010B2A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		66AECCB71C4BB4410010B2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66AECCBC1C4BB4410010B2A3 /* CSVExportSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVExportSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66AECCC01C4BB4410010B2A3 /* CSVExportSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVExportSwiftTests.swift; sourceTree = "<group>"; };
+		66AECCC21C4BB4410010B2A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66AECCCC1C4BB4770010B2A3 /* CSVExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVExport.swift; path = ../Sources/CSVExport.swift; sourceTree = "<group>"; };
+		66AECCCE1C4BB5E40010B2A3 /* CSVExportOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVExportOperation.swift; path = ../Sources/CSVExportOperation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66AECCAA1C4BB4410010B2A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AECCB91C4BB4410010B2A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66AECCA41C4BB4410010B2A3 = {
+			isa = PBXGroup;
+			children = (
+				66AECCCB1C4BB4590010B2A3 /* Sources */,
+				66AECCAF1C4BB4410010B2A3 /* CSVExportSwift */,
+				66AECCBF1C4BB4410010B2A3 /* CSVExportSwiftTests */,
+				66AECCAE1C4BB4410010B2A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		66AECCAE1C4BB4410010B2A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66AECCAD1C4BB4410010B2A3 /* CSVExportSwift.app */,
+				66AECCBC1C4BB4410010B2A3 /* CSVExportSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66AECCAF1C4BB4410010B2A3 /* CSVExportSwift */ = {
+			isa = PBXGroup;
+			children = (
+				66AECCB01C4BB4410010B2A3 /* AppDelegate.swift */,
+				66AECCB21C4BB4410010B2A3 /* Assets.xcassets */,
+				66AECCB41C4BB4410010B2A3 /* MainMenu.xib */,
+				66AECCB71C4BB4410010B2A3 /* Info.plist */,
+			);
+			path = CSVExportSwift;
+			sourceTree = "<group>";
+		};
+		66AECCBF1C4BB4410010B2A3 /* CSVExportSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				66AECCC01C4BB4410010B2A3 /* CSVExportSwiftTests.swift */,
+				66AECCC21C4BB4410010B2A3 /* Info.plist */,
+			);
+			path = CSVExportSwiftTests;
+			sourceTree = "<group>";
+		};
+		66AECCCB1C4BB4590010B2A3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				66AECCCC1C4BB4770010B2A3 /* CSVExport.swift */,
+				66AECCCE1C4BB5E40010B2A3 /* CSVExportOperation.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66AECCAC1C4BB4410010B2A3 /* CSVExportSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66AECCC51C4BB4410010B2A3 /* Build configuration list for PBXNativeTarget "CSVExportSwift" */;
+			buildPhases = (
+				66AECCA91C4BB4410010B2A3 /* Sources */,
+				66AECCAA1C4BB4410010B2A3 /* Frameworks */,
+				66AECCAB1C4BB4410010B2A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSVExportSwift;
+			productName = CSVExportSwift;
+			productReference = 66AECCAD1C4BB4410010B2A3 /* CSVExportSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66AECCBB1C4BB4410010B2A3 /* CSVExportSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66AECCC81C4BB4410010B2A3 /* Build configuration list for PBXNativeTarget "CSVExportSwiftTests" */;
+			buildPhases = (
+				66AECCB81C4BB4410010B2A3 /* Sources */,
+				66AECCB91C4BB4410010B2A3 /* Frameworks */,
+				66AECCBA1C4BB4410010B2A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66AECCBE1C4BB4410010B2A3 /* PBXTargetDependency */,
+			);
+			name = CSVExportSwiftTests;
+			productName = CSVExportSwiftTests;
+			productReference = 66AECCBC1C4BB4410010B2A3 /* CSVExportSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66AECCA51C4BB4410010B2A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "David Cilia";
+				TargetAttributes = {
+					66AECCAC1C4BB4410010B2A3 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					66AECCBB1C4BB4410010B2A3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 66AECCAC1C4BB4410010B2A3;
+					};
+				};
+			};
+			buildConfigurationList = 66AECCA81C4BB4410010B2A3 /* Build configuration list for PBXProject "CSVExportSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66AECCA41C4BB4410010B2A3;
+			productRefGroup = 66AECCAE1C4BB4410010B2A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66AECCAC1C4BB4410010B2A3 /* CSVExportSwift */,
+				66AECCBB1C4BB4410010B2A3 /* CSVExportSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66AECCAB1C4BB4410010B2A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AECCB31C4BB4410010B2A3 /* Assets.xcassets in Resources */,
+				66AECCB61C4BB4410010B2A3 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AECCBA1C4BB4410010B2A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66AECCA91C4BB4410010B2A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AECCCF1C4BB5E40010B2A3 /* CSVExportOperation.swift in Sources */,
+				66AECCCD1C4BB4770010B2A3 /* CSVExport.swift in Sources */,
+				66AECCB11C4BB4410010B2A3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66AECCB81C4BB4410010B2A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AECCC11C4BB4410010B2A3 /* CSVExportSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66AECCBE1C4BB4410010B2A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66AECCAC1C4BB4410010B2A3 /* CSVExportSwift */;
+			targetProxy = 66AECCBD1C4BB4410010B2A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		66AECCB41C4BB4410010B2A3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66AECCB51C4BB4410010B2A3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66AECCC31C4BB4410010B2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		66AECCC41C4BB4410010B2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		66AECCC61C4BB4410010B2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CSVExportSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dc.CSVExportSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66AECCC71C4BB4410010B2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CSVExportSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dc.CSVExportSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		66AECCC91C4BB4410010B2A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CSVExportSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dc.CSVExportSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSVExportSwift.app/Contents/MacOS/CSVExportSwift";
+			};
+			name = Debug;
+		};
+		66AECCCA1C4BB4410010B2A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CSVExportSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dc.CSVExportSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSVExportSwift.app/Contents/MacOS/CSVExportSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66AECCA81C4BB4410010B2A3 /* Build configuration list for PBXProject "CSVExportSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AECCC31C4BB4410010B2A3 /* Debug */,
+				66AECCC41C4BB4410010B2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66AECCC51C4BB4410010B2A3 /* Build configuration list for PBXNativeTarget "CSVExportSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AECCC61C4BB4410010B2A3 /* Debug */,
+				66AECCC71C4BB4410010B2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		66AECCC81C4BB4410010B2A3 /* Build configuration list for PBXNativeTarget "CSVExportSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66AECCC91C4BB4410010B2A3 /* Debug */,
+				66AECCCA1C4BB4410010B2A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66AECCA51C4BB4410010B2A3 /* Project object */;
+}
