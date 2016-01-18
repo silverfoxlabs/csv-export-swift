@@ -5,11 +5,19 @@
 
 
 # csv-export-swift
-Lightweight CSV export library written in Swift
+### Lightweight CSV export library written in Swift
 
 Unit Tests are in the Xcode project.
 
+#### Carthage:
+``` "github dcilia/csv-export-swift" ```
+
+#### Swift Package Manager:
+``` $ swift build ``` will build a module
+``` CSVExport.a ```
+
+
 Feel free to contribute any bug fixes, or features or submit requests.
 
-* This project uses protocols with associated types!
+##### This project uses protocols with associated types!
 
