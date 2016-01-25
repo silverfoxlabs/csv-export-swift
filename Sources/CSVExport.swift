@@ -30,8 +30,8 @@ public protocol CSVExporting {
 
 public class CSVExporter<T: CSVExporting> {
     
-    var filePath : String = ""
-    var rawData : NSData?
+    public var filePath : String = ""
+    public var rawData : NSData?
     
     private var _dataArray : [T]
     private var _csvString : String
@@ -104,7 +104,7 @@ public class CSVExporter<T: CSVExporting> {
         }
     }
     
-    func export(finishHandler: () -> Void) -> Void {
+    public func export(finishHandler: () -> Void) -> Void {
         
         _createFile(self.filePath)
         _writeDataToFile(_encode(), path: filePath)

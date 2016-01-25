@@ -53,7 +53,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
      Success, FilePathError, DataEmptyError, Cancelled, Unknown
      
     */
-    var finishedState : CSVFinishedState = .Unknown
+    public var finishedState : CSVFinishedState = .Unknown
     
     /**
      Initializing a new CSVOperation
@@ -128,7 +128,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
  - Cancelled:      The operation was cancelled.
  - Unknown:        An unknown error occured.
  */
-enum CSVFinishedState : Int {
+public enum CSVFinishedState : Int {
 
     case Success, FilePathError, DataEmptyError, Cancelled, Unknown
 }
