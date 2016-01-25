@@ -68,7 +68,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
      NSOperationQueue.
      
      */
-    init(filePath : NSURL, source: [T]) {
+    public init(filePath : NSURL, source: [T]) {
         
         _filePath = filePath
         _source = source

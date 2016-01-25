@@ -36,7 +36,7 @@ public class CSVExporter<T: CSVExporting> {
     private var _dataArray : [T]
     private var _csvString : String
     
-    init(source input: [T], template: String) {
+    public init(source input: [T], template: String) {
         _dataArray = input
         _csvString = template
     }
