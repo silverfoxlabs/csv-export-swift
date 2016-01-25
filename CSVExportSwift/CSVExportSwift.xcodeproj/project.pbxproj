@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663A34021C4E5754005BD6C5 /* Car-Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663A34011C4E5754005BD6C5 /* Car-Example.swift */; };
 		66AECCB11C4BB4410010B2A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AECCB01C4BB4410010B2A3 /* AppDelegate.swift */; };
 		66AECCB31C4BB4410010B2A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AECCB21C4BB4410010B2A3 /* Assets.xcassets */; };
 		66AECCB61C4BB4410010B2A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AECCB41C4BB4410010B2A3 /* MainMenu.xib */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		663A34011C4E5754005BD6C5 /* Car-Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car-Example.swift"; sourceTree = "<group>"; };
 		66AECCAD1C4BB4410010B2A3 /* CSVExportSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSVExportSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AECCB01C4BB4410010B2A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66AECCB21C4BB4410010B2A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				66AECCB21C4BB4410010B2A3 /* Assets.xcassets */,
 				66AECCB41C4BB4410010B2A3 /* MainMenu.xib */,
 				66AECCB71C4BB4410010B2A3 /* Info.plist */,
+				663A34011C4E5754005BD6C5 /* Car-Example.swift */,
 			);
 			path = CSVExportSwift;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				66AECCCF1C4BB5E40010B2A3 /* CSVExportOperation.swift in Sources */,
 				66AECCCD1C4BB4770010B2A3 /* CSVExport.swift in Sources */,
 				66AECCB11C4BB4410010B2A3 /* AppDelegate.swift in Sources */,
+				663A34021C4E5754005BD6C5 /* Car-Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +393,7 @@
 				66AECCC71C4BB4410010B2A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		66AECCC81C4BB4410010B2A3 /* Build configuration list for PBXNativeTarget "CSVExportSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -397,6 +402,7 @@
 				66AECCCA1C4BB4410010B2A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
