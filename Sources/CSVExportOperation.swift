@@ -15,36 +15,36 @@ Encapsulates exporting to a CSV file and writing to disk in an NSOperation
  NSOperationQueue.
  
 */
-public class CSVOperation< T : CSVExporting> : NSOperation {
+public class CSVOperation< T : CSVExporting> : Operation {
     
     private var _source : [T]
-    private var _filePath : NSURL
+    private var _filePath : URL
     
     private var _executing : Bool = false {
         didSet {
-            self.didChangeValueForKey("executing")
+            self.didChangeValue(forKey: "executing")
         }
     }
     private var _finished : Bool = false {
         didSet {
-            self.didChangeValueForKey("finished")
+            self.didChangeValue(forKey: "finished")
         }
     }
     private var _cancelled : Bool = false {
         didSet {
-            self.didChangeValueForKey("cancelled")
+            self.didChangeValue(forKey: "cancelled")
         }
     }
     private var _ready : Bool = false {
         didSet {
-            self.didChangeValueForKey("ready")
+            self.didChangeValue(forKey: "ready")
         }
     }
     
-    override public var ready : Bool { return _ready }
-    override public var finished : Bool { return _finished }
-    override public var cancelled : Bool { return _cancelled }
-    override public var executing : Bool { return _executing }
+    override public var isReady : Bool { return _ready }
+    override public var isFinished : Bool { return _finished }
+    override public var isCancelled : Bool { return _cancelled }
+    override public var isExecuting : Bool { return _executing }
     
     /**
     The finished state of the CSVExport
@@ -53,7 +53,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
      Success, FilePathError, DataEmptyError, Cancelled, Unknown
      
     */
-    public var finishedState : CSVFinishedState = .Unknown
+    public var finishedState : CSVFinishedState = .unknown
     
     /**
      Initializing a new CSVOperation
@@ -68,7 +68,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
      NSOperationQueue.
      
      */
-    public init(filePath : NSURL, source: [T]) {
+    public init(filePath : URL, source: [T]) {
         
         _filePath = filePath
         _source = source
@@ -81,7 +81,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
     
     override public func main() {
         
-        if cancelled == true { return }
+        if isCancelled == true { return }
         
         _executing = true
         
@@ -92,16 +92,16 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
             
             if exporter.filePath.isEmpty {
                 
-                self.finishedState = .FilePathError
+                self.finishedState = .filePathError
             }
             
             if let _ = exporter.rawData {
             
-                self.finishedState = .Success
+                self.finishedState = .success
             }
             else {
                 
-                self.finishedState = .DataEmptyError
+                self.finishedState = .dataEmptyError
             }
             
             self._finished = true
@@ -114,7 +114,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
         
         _cancelled = true
         _executing = false
-        finishedState = .Cancelled
+        finishedState = .cancelled
         
     }
 }
@@ -130,7 +130,7 @@ public class CSVOperation< T : CSVExporting> : NSOperation {
  */
 public enum CSVFinishedState : Int {
 
-    case Success, FilePathError, DataEmptyError, Cancelled, Unknown
+    case success, filePathError, dataEmptyError, cancelled, unknown
 }
 
 

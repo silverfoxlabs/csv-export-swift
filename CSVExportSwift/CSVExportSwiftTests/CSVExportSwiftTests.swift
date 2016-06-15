@@ -32,11 +32,11 @@ struct CSVMock : CSVExporting {
         return CSVMock(city: "Manhatan", state: "New York", zip: 10001, country: "USA", notes: "The best city in the world!")
     }
     
-    static func getNewMockArray(count : Int) -> [CSVMock] {
+    static func getNewMockArray(_ count : Int) -> [CSVMock] {
         
         var mocks = [CSVMock]()
         
-        for var i = 0; i < count; i++ {
+        for i in 0 ..< count {
             
             mocks.append(self.getNewMock())
         }
@@ -46,15 +46,15 @@ struct CSVMock : CSVExporting {
     
     static func reset() -> Void {
         
-        let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         guard let path = documents.first else { XCTAssert(false); return }
-        let filePath = String(NSString(string:path).stringByAppendingPathComponent("test.csv"))
+        let filePath = String(NSString(string:path).appendingPathComponent("test.csv"))
         
-        guard let url = NSURL(string: filePath) else { XCTAssert(false); return }
+        guard let url = URL(string: filePath) else { XCTAssert(false); return }
         
         do {
             
-           try NSFileManager.defaultManager().removeItemAtURL(url)
+           try FileManager.default().removeItem(at: url)
         }
         catch {
             
@@ -82,7 +82,7 @@ class CSVExportTests : XCTestCase {
         let mock = CSVMock.getNewMock()
         let export = CSVExporter(source: [mock], template: CSVMock.templateString())
         XCTAssertTrue(export.filePath.isEmpty)
-        let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         guard let path = documents.first else { XCTAssert(false); return }
         export.filePath = path
         XCTAssertEqual(export.filePath, path)
@@ -94,75 +94,75 @@ class CSVExportTests : XCTestCase {
         let mock = CSVMock.getNewMock()
         let export = CSVExporter(source: [mock], template: CSVMock.templateString())
         XCTAssertTrue(export.filePath.isEmpty)
-        let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         guard let path = documents.first else { XCTAssert(false); return }
-        let filePath = String(NSString(string:path).stringByAppendingPathComponent("test.csv"))
+        let filePath = String(NSString(string:path).appendingPathComponent("test.csv"))
         export.filePath = filePath
         Swift.print(filePath)
         
-        let expectation = self.expectationWithDescription("self")
+        let expectation = self.expectation(withDescription: "self")
         
         export.export { () -> Void in
             
-            XCTAssertTrue(NSFileManager.defaultManager().fileExistsAtPath(filePath))
-            XCTAssertNotNil(NSData(contentsOfFile: filePath))
+            XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+            XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
             expectation.fulfill()
         }
         
-        self.waitForExpectationsWithTimeout(60, handler: nil)
+        self.waitForExpectations(withTimeout: 60, handler: nil)
     }
     
     
     
     func testPerfomanceExample() -> Void {
         
-        self.measureBlock {
+        self.measure {
         
             let mock = CSVMock.getNewMockArray(100)
             let export = CSVExporter(source: mock, template: CSVMock.templateString())
             XCTAssertTrue(export.filePath.isEmpty)
-            let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             guard let path = documents.first else { XCTAssert(false); return }
-            let filePath = String(NSString(string:path).stringByAppendingPathComponent("test.csv"))
+            let filePath = String(NSString(string:path).appendingPathComponent("test.csv"))
             export.filePath = filePath
             Swift.print(filePath)
             
-            let expectation = self.expectationWithDescription("self")
+            let expectation = self.expectation(withDescription: "self")
             
             export.export { () -> Void in
                 
-                XCTAssertTrue(NSFileManager.defaultManager().fileExistsAtPath(filePath))
-                XCTAssertNotNil(NSData(contentsOfFile: filePath))
+                XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+                XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
                 expectation.fulfill()
             }
             
-            self.waitForExpectationsWithTimeout(60, handler: nil)
+            self.waitForExpectations(withTimeout: 60, handler: nil)
         }
     }
     
     func testPerformanceExampleLargeAmount() -> Void {
         
-        self.measureBlock {
+        self.measure {
             
             let mock = CSVMock.getNewMockArray(1000)
             let export = CSVExporter(source: mock, template: CSVMock.templateString())
             XCTAssertTrue(export.filePath.isEmpty)
-            let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+            let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             guard let path = documents.first else { XCTAssert(false); return }
-            let filePath = String(NSString(string:path).stringByAppendingPathComponent("test.csv"))
+            let filePath = String(NSString(string:path).appendingPathComponent("test.csv"))
             export.filePath = filePath
             Swift.print(filePath)
             
-            let expectation = self.expectationWithDescription("com.csveport.export")
+            let expectation = self.expectation(withDescription: "com.csveport.export")
             
             export.export { () -> Void in
                 
-                XCTAssertTrue(NSFileManager.defaultManager().fileExistsAtPath(filePath))
-                XCTAssertNotNil(NSData(contentsOfFile: filePath))
+                XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+                XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
                 expectation.fulfill()
             }
             
-            self.waitForExpectationsWithTimeout(60, handler: nil)
+            self.waitForExpectations(withTimeout: 60, handler: nil)
         }
     }
 }
@@ -179,29 +179,29 @@ class CSVOperationTests : XCTestCase {
         let mock = CSVMock.getNewMockArray(10)
         let export = CSVExporter(source: mock, template: CSVMock.templateString())
         XCTAssertTrue(export.filePath.isEmpty)
-        let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         guard let path = documents.first else { XCTAssert(false); return }
-        let filePath = String(NSString(string:path).stringByAppendingPathComponent("test.csv"))
+        let filePath = String(NSString(string:path).appendingPathComponent("test.csv"))
         
-        guard let url = NSURL(string: filePath) else { XCTAssert(false); return }
+        guard let url = URL(string: filePath) else { XCTAssert(false); return }
         
         let operation = CSVOperation(filePath: url, source: mock)
         XCTAssertNotNil(operation)
-        XCTAssertTrue(operation.ready)
+        XCTAssertTrue(operation.isReady)
         
-        let expectation = self.expectationWithDescription("com.csvexport.operation.expectation")
+        let expectation = self.expectation(withDescription: "com.csvexport.operation.expectation")
         
         operation.completionBlock = {
         
-            XCTAssertTrue(operation.finished)
-            XCTAssertTrue(NSFileManager.defaultManager().fileExistsAtPath(filePath))
-            XCTAssertNotNil(NSData(contentsOfFile: filePath))
-            XCTAssertEqual(operation.finishedState, CSVFinishedState.Success)
+            XCTAssertTrue(operation.isFinished)
+            XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+            XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
+            XCTAssertEqual(operation.finishedState, CSVFinishedState.success)
             expectation.fulfill()
         }
         
-        NSOperationQueue.mainQueue().addOperation(operation)
-        self.waitForExpectationsWithTimeout(60, handler: nil)
+        OperationQueue.main().addOperation(operation)
+        self.waitForExpectations(withTimeout: 60, handler: nil)
         
     }
 }
