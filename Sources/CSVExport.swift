@@ -31,7 +31,7 @@ public protocol CSVExporting {
 public class CSVExporter<T: CSVExporting> {
     
     public var filePath : String = ""
-    public var rawData : NSData?
+    public var rawData : Data?
     
     private var _dataArray : [T]
     private var _csvString : String
@@ -46,10 +46,10 @@ public class CSVExporter<T: CSVExporting> {
      
      - parameter path: the path that you would like to create
      */
-    private func _createFile(path: String) -> Void {
+    private func _createFile(_ path: String) -> Void {
         
-        let fileManager = NSFileManager.defaultManager()
-        if fileManager.createFileAtPath(path, contents: nil, attributes: nil) {
+        let fileManager = FileManager.default()
+        if fileManager.createFile(atPath: path, contents: nil, attributes: nil) {
             self.filePath = path
         }
     }
@@ -59,7 +59,7 @@ public class CSVExporter<T: CSVExporting> {
      
      - returns: an instance of NSData (may be empty)
      */
-    private func _encode() -> NSData {
+    private func _encode() -> Data {
         
         //CSV is a delimited data format that has fields/columns separated by the comma character and records/rows terminated by newlines.
         
@@ -78,9 +78,9 @@ public class CSVExporter<T: CSVExporting> {
         }
         
         //Use NSFileHandle to write the data to disk
-        guard let data = _csvString.dataUsingEncoding(NSUTF8StringEncoding) else {
+        guard let data = _csvString.data(using: String.Encoding.utf8) else {
             
-            return NSData()
+            return Data()
         }
         
 
@@ -93,18 +93,18 @@ public class CSVExporter<T: CSVExporting> {
      - parameter data: an instance of NSData you want to write
      - parameter path: the path where to write to
      */
-    private func _writeDataToFile(data: NSData, path: String) -> Void {
+    private func _writeDataToFile(_ data: Data, path: String) -> Void {
         
         self.rawData = data
         
-        if let handle = NSFileHandle(forWritingAtPath: self.filePath) {
+        if let handle = FileHandle(forWritingAtPath: self.filePath) {
             
-            handle.truncateFileAtOffset(handle.seekToEndOfFile())
-            handle.writeData(data)
+            handle.truncateFile(atOffset: handle.seekToEndOfFile())
+            handle.write(data)
         }
     }
     
-    public func export(finishHandler: () -> Void) -> Void {
+    public func export(_ finishHandler: () -> Void) -> Void {
         
         _createFile(self.filePath)
         _writeDataToFile(_encode(), path: filePath)

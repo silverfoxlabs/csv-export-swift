@@ -28,11 +28,11 @@ struct Car : CSVExporting {
     
     func go() -> Void {
         
-        let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documents = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         guard let path = documents.first else { return }
-        let filePath = String(NSString(string:path).stringByAppendingPathComponent("Cars.csv"))
+        let filePath = String(NSString(string:path).appendingPathComponent("Cars.csv"))
         
-        guard let url = NSURL(string: filePath) else { return }
+        guard let url = URL(string: filePath) else { return }
         
         let items = [
             
@@ -46,13 +46,13 @@ struct Car : CSVExporting {
         
         operation.completionBlock = {
             
-            if operation.finishedState == .Success {
+            if operation.finishedState == .success {
                 
                 //File has been saved to disk ...
             }
         }
         
-        NSOperationQueue().addOperation(operation)
+        OperationQueue().addOperation(operation)
     }
 }
 
