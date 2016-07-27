@@ -48,7 +48,8 @@ public class CSVExporter<T: CSVExporting> {
      */
     private func _createFile(_ path: String) -> Void {
         
-        let fileManager = FileManager.default()
+        let fileManager = FileManager.default
+        
         if fileManager.createFile(atPath: path, contents: nil, attributes: nil) {
             self.filePath = path
         }
