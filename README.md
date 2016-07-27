@@ -1,5 +1,5 @@
 
-[![Language Swift 2](https://img.shields.io/badge/Language-Swift%202-orange.svg)](https://developer.apple.com/swift)
+[![Language Swift 2](https://img.shields.io/badge/Language-Swift%202-orange.svg)](https://developer.apple.com/swift) [![Language Swift 3](https://img.shields.io/badge/Language-Swift%203-orange.svg)](https://developer.apple.com/swift)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -8,6 +8,8 @@
 ### Lightweight CSV export library written in Swift
 
 Unit Tests are in the Xcode project.
+
+Swift 3 support is on the ``` swift3 ``` branch.  Once Xcode 8 reaches GM, this will be merged to ``` master ```.
 
 #### Carthage:
 ``` "github dcilia/csv-export-swift" ```
@@ -19,11 +21,10 @@ Unit Tests are in the Xcode project.
 
 Feel free to contribute any bug fixes, or features or submit requests.
 
-##### This project uses protocols with associated types!
 
 ##### Example Usage:
 
-Have your class conform to CSVExporting
+Have your class / struct conform to CSVExporting
 
 ``` 
 struct Car : CSVExporting {
