@@ -87,7 +87,7 @@ public class CSVOperation< T : CSVExporting> : Operation {
         
         //Run the export
         let exporter = CSVExporter(source: _source, template: T.templateString())
-        exporter.filePath = _filePath.path!
+        exporter.filePath = _filePath.path
         exporter.export {
             
             if exporter.filePath.isEmpty {
