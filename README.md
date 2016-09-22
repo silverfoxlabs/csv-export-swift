@@ -9,7 +9,7 @@
 
 Unit Tests are in the Xcode project.
 
-Swift 3 support is on the ``` swift3 ``` branch.  Once Xcode 8 reaches GM, this will be merged to ``` master ```.
+Now supporting swift 3 in ``` master ```
 
 #### Carthage:
 ``` "github dcilia/csv-export-swift" ```
@@ -44,11 +44,11 @@ struct Car : CSVExporting {
         return "\(self.make), \(self.model), \(self.year)\n"
     }
 }
- ```
 
- Create an NSOperation and run the export
+```
+Create an NSOperation and run the export
 
- ``` 
+``` 
  let documents = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
          guard let path = documents.first else { return }
          let filePath = String(NSString(string:path).stringByAppendingPathComponent("Cars.csv"))
@@ -76,4 +76,4 @@ struct Car : CSVExporting {
          
          NSOperationQueue().addOperation(operation)
          
- ```
+```
