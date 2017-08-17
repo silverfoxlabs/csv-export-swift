@@ -1,13 +1,16 @@
-//
-//  Car-Example.swift
-//  CSVExportSwift
-//
-//  Created by dcilia on 1/19/16.
-//  Copyright © 2016 David Cilia. All rights reserved.
-//
+//: Playground - noun: a place where people can play
 
-import Foundation
 
+/** 
+ Use as a reference example
+ Note that you may need to add PlaygroundSupport
+ and indefinite execution in order to use NSFileHandle.
+ */
+import Cocoa
+import CSVExporter
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 struct Car : CSVExporting {
     
@@ -49,10 +52,15 @@ struct Car : CSVExporting {
             if operation.finishedState == .success {
                 
                 //File has been saved to disk ...
+                print("Saved successfully.")
             }
         }
         
         OperationQueue().addOperation(operation)
     }
 }
+
+let car = Car(make: "Ford", model: "Focus", year: "1998")
+car.go()
+
 

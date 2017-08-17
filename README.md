@@ -9,7 +9,9 @@
 
 Unit Tests are in the Xcode project.
 
-Now supporting swift 3 in ``` master ```
+Now supporting ```Swift 4``` in ``` master ```
+
+1 universal framework you can import into your project.
 
 #### Carthage:
 ``` "github dcilia/csv-export-swift" ```
@@ -18,9 +20,20 @@ Now supporting swift 3 in ``` master ```
 ``` $ swift build ``` will build a module
 ``` CSVExport.a ```
 
+#### Subproject:
+
+Drag and drop the ```.xcodeproj``` into your ```.xcworkspace```.
+
+#### Supported Platforms:
+``` macOS 10.10+ ```
+
+``` iOS 8.0+ ```
+
+``` tvOS 9.0+ ```
+
+``` watchOS 2.0+ ```
 
 Feel free to contribute any bug fixes, or features or submit requests.
-
 
 ##### Example Usage:
 

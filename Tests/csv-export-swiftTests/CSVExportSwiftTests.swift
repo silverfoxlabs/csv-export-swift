@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import CSVExportSwift
+@testable import CSVExporter
 
 struct CSVMock : CSVExporting {
 
@@ -36,7 +36,7 @@ struct CSVMock : CSVExporting {
         
         var mocks = [CSVMock]()
         
-        for i in 0 ..< count {
+        for _ in 0 ..< count {
             
             mocks.append(self.getNewMock())
         }
@@ -54,7 +54,7 @@ struct CSVMock : CSVExporting {
         
         do {
             
-           try FileManager.default().removeItem(at: url)
+            try FileManager.default.removeItem(at: url)
         }
         catch {
             
@@ -100,16 +100,16 @@ class CSVExportTests : XCTestCase {
         export.filePath = filePath
         Swift.print(filePath)
         
-        let expectation = self.expectation(withDescription: "self")
+        let expectation = self.expectation(description: "self")
         
         export.export { () -> Void in
             
-            XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+            XCTAssertTrue(FileManager.default.fileExists(atPath: filePath))
             XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
             expectation.fulfill()
         }
         
-        self.waitForExpectations(withTimeout: 60, handler: nil)
+        self.waitForExpectations(timeout: 60, handler: nil)
     }
     
     
@@ -127,16 +127,16 @@ class CSVExportTests : XCTestCase {
             export.filePath = filePath
             Swift.print(filePath)
             
-            let expectation = self.expectation(withDescription: "self")
+            let expectation = self.expectation(description: "self")
             
             export.export { () -> Void in
                 
-                XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+                XCTAssertTrue(FileManager.default.fileExists(atPath: filePath))
                 XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
                 expectation.fulfill()
             }
             
-            self.waitForExpectations(withTimeout: 60, handler: nil)
+            self.waitForExpectations(timeout: 60, handler: nil)
         }
     }
     
@@ -153,16 +153,16 @@ class CSVExportTests : XCTestCase {
             export.filePath = filePath
             Swift.print(filePath)
             
-            let expectation = self.expectation(withDescription: "com.csveport.export")
+            let expectation = self.expectation(description: "com.csveport.export")
             
             export.export { () -> Void in
                 
-                XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+                XCTAssertTrue(FileManager.default.fileExists(atPath: filePath))
                 XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
                 expectation.fulfill()
             }
             
-            self.waitForExpectations(withTimeout: 60, handler: nil)
+            self.waitForExpectations(timeout: 60, handler: nil)
         }
     }
 }
@@ -189,19 +189,19 @@ class CSVOperationTests : XCTestCase {
         XCTAssertNotNil(operation)
         XCTAssertTrue(operation.isReady)
         
-        let expectation = self.expectation(withDescription: "com.csvexport.operation.expectation")
+        let expectation = self.expectation(description: "com.csvexport.operation.expectation")
         
         operation.completionBlock = {
         
             XCTAssertTrue(operation.isFinished)
-            XCTAssertTrue(FileManager.default().fileExists(atPath: filePath))
+            XCTAssertTrue(FileManager.default.fileExists(atPath: filePath))
             XCTAssertNotNil(try? Data(contentsOf: URL(fileURLWithPath: filePath)))
             XCTAssertEqual(operation.finishedState, CSVFinishedState.success)
             expectation.fulfill()
         }
         
-        OperationQueue.main().addOperation(operation)
-        self.waitForExpectations(withTimeout: 60, handler: nil)
+        OperationQueue.main.addOperation(operation)
+        self.waitForExpectations(timeout: 60, handler: nil)
         
     }
 }
